@@ -1,5 +1,6 @@
 import { Shield, Leaf, Target, MessageCircle } from "lucide-react";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
+import { motion } from "framer-motion";
 
 const WHATSAPP_NUMBER = "5591999999999";
 const WHATSAPP_MESSAGE = encodeURIComponent(
@@ -22,7 +23,7 @@ const ValueProposition = () => {
     {
       icon: Target,
       title: "Solução certa para o seu cenário",
-      description: "Cada área pede um caminho — a decisão técnica evita tentativa e erro.",
+      description: "Cada área pede um caminho e a decisão técnica evita tentativa e erro.",
     },
   ];
 
@@ -34,10 +35,10 @@ const ValueProposition = () => {
           <ScrollReveal>
             <div className="space-y-6">
               <h2 className="text-foreground section-header">
-                Recuperação ambiental que funciona no terreno — com execução de engenharia.
+                Recuperação ambiental que funciona no terreno, com execução de engenharia.
               </h2>
               
-              <p className="text-lg text-muted-foreground leading-relaxed mt-6">
+              <p className="text-lg text-muted-foreground leading-relaxed mt-6 text-left">
                 A Marena entra para transformar um cenário instável em uma área controlada e encaminhada: solução adequada ao caso, aplicação correta e orientação do que sustenta o resultado ao longo do tempo.
               </p>
 
@@ -46,15 +47,17 @@ const ValueProposition = () => {
                   Vamos destravar a solução certa para a sua obra.
                 </p>
                 
-                <a
+                <motion.a
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center gap-3 px-6 py-3.5"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   <MessageCircle className="w-5 h-5" />
                   Falar no WhatsApp
-                </a>
+                </motion.a>
               </div>
             </div>
           </ScrollReveal>
@@ -68,10 +71,10 @@ const ValueProposition = () => {
                     <card.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-card-foreground mb-1">
+                    <h3 className="text-lg font-bold text-card-foreground mb-1 text-left">
                       {card.title}
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground text-left">
                       {card.description}
                     </p>
                   </div>
@@ -83,7 +86,7 @@ const ValueProposition = () => {
       </div>
 
       {/* Section Separator */}
-      <div className="section-separator mt-14 md:mt-20" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-border/20 to-transparent mt-14 md:mt-20" />
     </section>
   );
 };

@@ -9,7 +9,7 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}
 
 const FinalCTA = () => {
   return (
-    <section className="bg-primary py-16 md:py-24">
+    <section className="bg-primary py-16 md:py-24 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +21,7 @@ const FinalCTA = () => {
           Precisa recuperar uma área e reduzir risco de erosão?
         </h2>
         
-        <p className="text-primary-foreground/85 text-lg max-w-2xl mx-auto mb-8">
+        <p className="text-primary-foreground/85 text-lg max-w-2xl mx-auto mb-8 text-left">
           Chame no WhatsApp e envie fotos/localização. A gente avalia o cenário e orienta o caminho mais aplicável para avançar com segurança.
         </p>
 

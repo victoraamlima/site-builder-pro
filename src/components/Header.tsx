@@ -11,12 +11,14 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-[72px]">
+        <div className="flex items-center justify-between h-[72px] lg:h-[90px]">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-xl font-bold tracking-tight text-foreground">
-              MARENA
-            </span>
+            <img
+              src="/logo_marena_sem_fundo.png"
+              alt="Marena"
+              className="h-10 lg:h-20 w-auto"
+            />
           </div>
 
           {/* CTA WhatsApp */}

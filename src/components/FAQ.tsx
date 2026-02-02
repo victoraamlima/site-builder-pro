@@ -37,7 +37,10 @@ const FAQ = () => {
           {/* Header */}
           <ScrollReveal>
             <div className="text-center mb-10">
-              <h2 className="text-foreground mb-4 section-header section-header-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                <span>Perguntas Frequentes</span>
+              </div>
+              <h2 className="text-foreground section-header section-header-center">
                 Perguntas frequentes
               </h2>
             </div>
@@ -50,12 +53,12 @@ const FAQ = () => {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="bg-card border border-card-border/50 rounded-xl px-6 data-[state=open]:shadow-sm data-[state=open]:border-card-border transition-all duration-200"
+                  className="bg-card border border-primary/8 rounded-xl px-6 data-[state=open]:shadow-md data-[state=open]:border-primary/15 transition-all duration-200"
                 >
-                  <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-5">
+                  <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-5 justify-start">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-5">
+                  <AccordionContent className="text-muted-foreground pb-5 text-left">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

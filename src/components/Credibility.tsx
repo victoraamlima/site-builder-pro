@@ -1,4 +1,4 @@
-import { Users, Truck, Award } from "lucide-react";
+import { UsersRound, TruckIcon, BadgeCheck } from "lucide-react";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
@@ -10,19 +10,19 @@ import gallery6 from "@/assets/gallery-6.jpg";
 const Credibility = () => {
   const proofPoints = [
     {
-      icon: Users,
+      icon: UsersRound,
       title: "Experiência de campo do time",
       description: "Atuação prática em execução e tomada de decisão no ambiente real.",
     },
     {
-      icon: Truck,
+      icon: TruckIcon,
       title: "Equipamento e mobilização",
       description: "Capacidade de operar e aplicar com consistência e segurança.",
     },
     {
-      icon: Award,
+      icon: BadgeCheck,
       title: "Critério técnico e responsabilidade",
-      description: "Solução definida por cenário — não por \"achismo\" ou tentativa e erro.",
+      description: "Solução definida por cenário, não por achismo ou tentativa e erro.",
     },
   ];
 
@@ -36,16 +36,19 @@ const Credibility = () => {
   ];
 
   return (
-    <section className="section-white section-padding">
+    <section className="section-green section-padding">
       <div className="container-custom">
         {/* Header */}
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-foreground mb-4 section-header section-header-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              <span>Nossa capacidade</span>
+            </div>
+            <h2 className="text-foreground section-header section-header-center">
               Capacidade real + execução de campo
             </h2>
-            <p className="text-lg text-muted-foreground mt-6">
-              O que dá confiança não é discurso — é capacidade, critério técnico e execução bem feita. A Marena estrutura a entrega para o cenário real (campo/obra/área), com responsabilidade e clareza.
+            <p className="text-lg text-muted-foreground mt-8 text-left">
+              O que dá confiança não é discurso, mas capacidade, critério técnico e execução bem feita. A Marena estrutura a entrega para o cenário real (campo/obra/área), com responsabilidade e clareza.
             </p>
           </div>
         </ScrollReveal>
@@ -59,10 +62,10 @@ const Credibility = () => {
                   <point.icon className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-foreground mb-1">
+                  <h3 className="font-bold text-foreground mb-1 text-left">
                     {point.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-muted-foreground text-sm text-left">
                     {point.description}
                   </p>
                 </div>
@@ -76,7 +79,7 @@ const Credibility = () => {
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-4" staggerDelay={0.08}>
             {galleryImages.map((image, index) => (
               <StaggerItem key={index}>
-                <div className="group relative aspect-[4/3] rounded-xl overflow-hidden">
+                <div className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-primary/8 shadow-sm hover:shadow-md transition-all duration-300">
                   <img
                     src={image.src}
                     alt={image.caption}
@@ -94,7 +97,7 @@ const Credibility = () => {
       </div>
 
       {/* Section Separator */}
-      <div className="section-separator mt-14 md:mt-20" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-border/20 to-transparent mt-14 md:mt-20" />
     </section>
   );
 };

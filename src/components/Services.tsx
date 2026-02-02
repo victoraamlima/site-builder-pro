@@ -1,10 +1,10 @@
-import { Droplets, Mountain, Trees, Compass } from "lucide-react";
+import { Waves, Mountain, Sprout, Navigation } from "lucide-react";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
 
 const Services = () => {
   const services = [
     {
-      icon: Droplets,
+      icon: Waves,
       title: "Hidrossemeadura",
       context: "Para taludes, faixas de domínio e áreas expostas.",
       result: "Você recebe cobertura vegetal inicial com aplicação adequada ao terreno.",
@@ -16,13 +16,13 @@ const Services = () => {
       result: "Você recebe uma solução ajustada ao cenário, com execução orientada.",
     },
     {
-      icon: Trees,
+      icon: Sprout,
       title: "Recuperação e revegetação de áreas",
       context: "Para recomposição e recuperação gradual do ambiente.",
       result: "Você recebe um plano prático de execução e encaminhamento da área.",
     },
     {
-      icon: Compass,
+      icon: Navigation,
       title: "Apoio técnico para definição da solução",
       context: "Para decidir o caminho certo antes de gastar no errado.",
       result: "Você recebe orientação objetiva do que faz sentido no seu caso.",
@@ -35,11 +35,14 @@ const Services = () => {
         {/* Header */}
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-foreground mb-4 section-header section-header-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              <span>O que fazemos</span>
+            </div>
+            <h2 className="text-foreground section-header section-header-center">
               Serviços focados no que mais aparece no campo
             </h2>
-            <p className="text-lg text-muted-foreground mt-6">
-              Escolha técnica e execução em campo para recuperar áreas e reduzir risco de erosão — com foco no que é aplicável e funcional.
+            <p className="text-lg text-muted-foreground mt-8 text-left">
+              Escolha técnica e execução em campo para recuperar áreas e reduzir risco de erosão, com foco no que é aplicável e funcional.
             </p>
           </div>
         </ScrollReveal>
@@ -54,13 +57,13 @@ const Services = () => {
                     <service.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-card-foreground mb-2">
+                    <h3 className="text-lg font-bold text-card-foreground mb-2 text-left">
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-3">
+                    <p className="text-muted-foreground text-sm mb-3 text-left">
                       {service.context}
                     </p>
-                    <p className="text-card-foreground text-sm font-medium">
+                    <p className="text-card-foreground text-sm font-medium text-left">
                       {service.result}
                     </p>
                   </div>
@@ -72,7 +75,7 @@ const Services = () => {
       </div>
 
       {/* Section Separator */}
-      <div className="section-separator mt-14 md:mt-20" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-border/20 to-transparent mt-14 md:mt-20" />
     </section>
   );
 };

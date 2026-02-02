@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* MARENA Design System - Engineering & Environmental Recovery */
 
@@ -14,7 +14,7 @@
     
     /* Alternate section backgrounds */
     --background-alt: 210 14% 97%;
-    --background-green: 160 30% 97%;
+    --background-green: 160 50% 92%;
     
     /* Text hierarchy */
     --text-primary: 210 11% 13%;
@@ -28,10 +28,10 @@
     --primary-light: 160 40% 94%;
     
     /* Footer dark green */
-    --footer-bg: 160 55% 10%;
+    --footer-bg: 160 60% 9%;
     --footer-text: 0 0% 100%;
-    --footer-muted: 160 20% 75%;
-    --footer-hover: 160 50% 70%;
+    --footer-muted: 0 0% 85%;
+    --footer-hover: 160 40% 65%;
     
     /* Secondary - Light surfaces */
     --secondary: 210 14% 97%;
@@ -189,13 +189,17 @@
 
   /* Section header with accent underline */
   .section-header {
-    @apply relative inline-block;
+    @apply relative inline-block pb-4;
   }
 
   .section-header::after {
     content: '';
-    @apply absolute -bottom-2 left-0 w-12 h-0.5 rounded-full;
-    background-color: hsl(var(--primary));
+    @apply absolute left-0;
+    bottom: 0;
+    height: 3px;
+    width: 60px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.5));
   }
 
   .section-header-center::after {
@@ -205,14 +209,15 @@
   /* Card base style - premium */
   .card-base {
     @apply bg-card rounded-xl p-6;
-    border: 1px solid hsl(var(--card-border) / 0.5);
-    box-shadow: var(--card-shadow);
+    border: 1px solid hsl(var(--primary) / 0.08);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
   }
 
   .card-base:hover {
-    box-shadow: var(--card-shadow-hover);
-    border-color: hsl(var(--card-border));
+    box-shadow: 0 4px 12px -2px hsl(var(--primary) / 0.12);
+    border-color: hsl(var(--primary) / 0.15);
+    transform: translateY(-2px);
   }
 
   /* CTA card (Hero) */
@@ -224,16 +229,18 @@
 
   /* Button interactions */
   .btn-primary {
-    @apply bg-primary hover:bg-primary-hover text-primary-foreground font-semibold rounded-xl transition-all duration-200;
+    @apply bg-primary text-primary-foreground font-semibold rounded-xl transition-all duration-200;
   }
 
   .btn-primary:hover {
     @apply scale-[1.02];
-    box-shadow: 0 4px 16px -4px hsl(var(--primary) / 0.4);
+    background-color: hsl(var(--primary-hover));
+    box-shadow: 0 6px 20px -4px hsl(var(--primary) / 0.45);
   }
 
   .btn-primary:active {
     @apply scale-[0.98];
+    box-shadow: 0 2px 8px -2px hsl(var(--primary) / 0.3);
   }
 
   /* Footer styles */

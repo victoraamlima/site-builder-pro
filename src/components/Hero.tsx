@@ -42,11 +42,11 @@ const Hero = () => {
             className="lg:col-span-3 space-y-6"
           >
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight text-balance">
-              Recuperação ambiental com execução de engenharia em campo — em taludes, beiras de estrada e áreas degradadas.
+              Recuperação ambiental com execução de engenharia em campo, em taludes, beiras de estrada e áreas degradadas.
             </h1>
             
             <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl leading-relaxed">
-              Hidrossemeadura e soluções de revegetação para <strong>conter erosão</strong>, <strong>atender exigências ambientais</strong> e <strong>deixar a área pronta para seguir</strong> — com avaliação técnica e execução no cenário real.
+              Hidrossemeadura e soluções de revegetação para <strong>conter erosão</strong>, <strong>atender exigências ambientais</strong> e <strong>deixar a área pronta para seguir</strong>, com avaliação técnica e execução no cenário real.
             </p>
 
             {/* Benefits - Desktop */}
