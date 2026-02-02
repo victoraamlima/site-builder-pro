@@ -1,4 +1,5 @@
 import { MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const WHATSAPP_NUMBER = "5591999999999";
 const WHATSAPP_MESSAGE = encodeURIComponent(
@@ -9,7 +10,13 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}
 const FinalCTA = () => {
   return (
     <section className="bg-primary py-16 md:py-24">
-      <div className="container-custom text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+        className="container-custom text-center"
+      >
         <h2 className="text-primary-foreground mb-4 text-2xl md:text-3xl">
           Precisa recuperar uma área e reduzir risco de erosão?
         </h2>
@@ -18,20 +25,22 @@ const FinalCTA = () => {
           Chame no WhatsApp e envie fotos/localização. A gente avalia o cenário e orienta o caminho mais aplicável para avançar com segurança.
         </p>
 
-        <a
+        <motion.a
           href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-primary-foreground text-primary px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
+          className="inline-flex items-center gap-3 bg-primary-foreground text-primary px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200"
+          whileHover={{ scale: 1.02, boxShadow: "0 8px 24px -8px rgba(0,0,0,0.3)" }}
+          whileTap={{ scale: 0.98 }}
         >
           <MessageCircle className="w-6 h-6" />
           Falar no WhatsApp e solicitar avaliação
-        </a>
+        </motion.a>
 
         <p className="text-primary-foreground/70 text-sm mt-6">
           Quanto mais contexto você enviar, mais rápido a análise.
         </p>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,4 +1,5 @@
 import { Phone } from "lucide-react";
+import { motion } from "framer-motion";
 
 const WHATSAPP_NUMBER = "5591999999999"; // Substituir pelo número real
 const WHATSAPP_MESSAGE = encodeURIComponent(
@@ -19,15 +20,17 @@ const Header = () => {
           </div>
 
           {/* CTA WhatsApp */}
-          <a
+          <motion.a
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-primary hover:bg-primary-hover text-primary-foreground px-4 py-2.5 rounded-lg font-medium text-sm transition-colors duration-200"
+            className="btn-primary flex items-center gap-2 px-4 py-2.5 text-sm"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
             <Phone className="w-4 h-4" />
             <span className="hidden sm:inline">WhatsApp</span>
-          </a>
+          </motion.a>
         </div>
       </div>
     </header>
