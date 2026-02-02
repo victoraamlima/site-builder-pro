@@ -1,4 +1,5 @@
 import { MessageSquare, Search, Hammer } from "lucide-react";
+import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
 
 const Process = () => {
   const steps = [
@@ -23,47 +24,51 @@ const Process = () => {
   ];
 
   return (
-    <section className="section-gray section-padding">
+    <section className="section-green section-padding">
       <div className="container-custom">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-foreground mb-4">
-            Um processo simples para sair do problema e ir para a execução
-          </h2>
-        </div>
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h2 className="text-foreground mb-4 section-header section-header-center">
+              Um processo simples para sair do problema e ir para a execução
+            </h2>
+          </div>
+        </ScrollReveal>
 
         {/* Timeline */}
-        <div className="grid md:grid-cols-3 gap-8 md:gap-6 relative">
+        <StaggerContainer className="grid md:grid-cols-3 gap-8 md:gap-6 relative" staggerDelay={0.15}>
           {/* Connection Line - Desktop */}
-          <div className="hidden md:block absolute top-[60px] left-[16%] right-[16%] h-[2px] bg-border" />
+          <div className="hidden md:block absolute top-[60px] left-[16%] right-[16%] h-[2px] bg-primary/20" />
           
           {steps.map((step, index) => (
-            <div
-              key={index}
-              className="relative flex flex-col items-center text-center"
-            >
-              {/* Step Number Circle */}
-              <div className="relative z-10 w-[120px] h-[120px] rounded-full bg-card border-2 border-primary flex flex-col items-center justify-center mb-6 shadow-lg">
-                <span className="text-3xl font-bold text-primary">{step.number}</span>
-                <step.icon className="w-6 h-6 text-primary mt-1" />
-              </div>
-              
-              {/* Content */}
-              <h3 className="text-lg font-bold text-foreground mb-2">
-                {step.title}
-              </h3>
-              <p className="text-muted-foreground max-w-xs">
-                {step.description}
-              </p>
+            <StaggerItem key={index}>
+              <div className="relative flex flex-col items-center text-center">
+                {/* Step Number Circle */}
+                <div className="relative z-10 w-[120px] h-[120px] rounded-full bg-card border-2 border-primary flex flex-col items-center justify-center mb-6 shadow-lg">
+                  <span className="text-3xl font-bold text-primary">{step.number}</span>
+                  <step.icon className="w-6 h-6 text-primary mt-1" />
+                </div>
+                
+                {/* Content */}
+                <h3 className="text-lg font-bold text-foreground mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-muted-foreground max-w-xs">
+                  {step.description}
+                </p>
 
-              {/* Mobile Connection Arrow */}
-              {index < steps.length - 1 && (
-                <div className="md:hidden w-[2px] h-8 bg-border mt-6" />
-              )}
-            </div>
+                {/* Mobile Connection Arrow */}
+                {index < steps.length - 1 && (
+                  <div className="md:hidden w-[2px] h-8 bg-primary/20 mt-6" />
+                )}
+              </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
+
+      {/* Section Separator */}
+      <div className="section-separator mt-14 md:mt-20" />
     </section>
   );
 };

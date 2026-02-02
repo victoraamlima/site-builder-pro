@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import ScrollReveal from "./ScrollReveal";
 
 const FAQ = () => {
   const faqs = [
@@ -30,33 +31,37 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="section-white section-padding">
+    <section className="section-green section-padding">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-10">
-            <h2 className="text-foreground mb-4">
-              Perguntas frequentes
-            </h2>
-          </div>
+          <ScrollReveal>
+            <div className="text-center mb-10">
+              <h2 className="text-foreground mb-4 section-header section-header-center">
+                Perguntas frequentes
+              </h2>
+            </div>
+          </ScrollReveal>
 
           {/* Accordion */}
-          <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-sm transition-shadow"
-              >
-                <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-5">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <ScrollReveal delay={0.1}>
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="bg-card border border-card-border/50 rounded-xl px-6 data-[state=open]:shadow-sm data-[state=open]:border-card-border transition-all duration-200"
+                >
+                  <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-5">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-5">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </ScrollReveal>
         </div>
       </div>
     </section>

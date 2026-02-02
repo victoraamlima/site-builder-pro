@@ -1,4 +1,5 @@
 import { MessageCircle, Check } from "lucide-react";
+import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const WHATSAPP_NUMBER = "5591999999999";
@@ -34,7 +35,12 @@ const Hero = () => {
       <div className="container-custom relative z-10 py-12 md:py-20">
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
           {/* Text Content - Left */}
-          <div className="lg:col-span-3 space-y-6 animate-fade-in">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="lg:col-span-3 space-y-6"
+          >
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight text-balance">
               Recuperação ambiental com execução de engenharia em campo — em taludes, beiras de estrada e áreas degradadas.
             </h1>
@@ -46,16 +52,27 @@ const Hero = () => {
             {/* Benefits - Desktop */}
             <ul className="hidden md:block space-y-3 pt-4">
               {benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start gap-3 text-primary-foreground/85">
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
+                  className="flex items-start gap-3 text-primary-foreground/85"
+                >
                   <Check className="w-5 h-5 mt-0.5 flex-shrink-0 text-primary-foreground" />
                   <span className="text-base">{benefit}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* CTA Card - Right */}
-          <div className="lg:col-span-2 animate-slide-in-right" style={{ animationDelay: '0.2s' }}>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="lg:col-span-2"
+          >
             <div className="cta-card">
               <h3 className="text-xl md:text-2xl font-bold text-card-foreground mb-4">
                 Solicite uma avaliação técnica
@@ -65,15 +82,17 @@ const Hero = () => {
                 Envie <strong>local</strong>, <strong>fotos</strong> e <strong>metragem aproximada</strong> para agilizar a análise.
               </p>
 
-              <a
+              <motion.a
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 w-full bg-primary hover:bg-primary-hover text-primary-foreground px-6 py-4 rounded-xl font-semibold text-base transition-all duration-200 hover:scale-[1.02]"
+                className="btn-primary flex items-center justify-center gap-3 w-full px-6 py-4 text-base"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <MessageCircle className="w-5 h-5" />
                 Falar no WhatsApp e solicitar avaliação
-              </a>
+              </motion.a>
 
               <p className="text-sm text-muted-foreground mt-4 text-center">
                 Resposta rápida no horário comercial.
@@ -89,7 +108,7 @@ const Hero = () => {
                 ))}
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -12,8 +12,9 @@
     --background: 0 0% 100%;
     --foreground: 210 11% 13%;
     
-    /* Alternate section background */
+    /* Alternate section backgrounds */
     --background-alt: 210 14% 97%;
+    --background-green: 160 30% 97%;
     
     /* Text hierarchy */
     --text-primary: 210 11% 13%;
@@ -24,6 +25,13 @@
     --primary: 160 64% 14%;
     --primary-foreground: 0 0% 100%;
     --primary-hover: 160 64% 10%;
+    --primary-light: 160 40% 94%;
+    
+    /* Footer dark green */
+    --footer-bg: 160 55% 10%;
+    --footer-text: 0 0% 100%;
+    --footer-muted: 160 20% 75%;
+    --footer-hover: 160 50% 70%;
     
     /* Secondary - Light surfaces */
     --secondary: 210 14% 97%;
@@ -32,6 +40,7 @@
     /* Card and UI elements */
     --card: 0 0% 100%;
     --card-foreground: 210 11% 13%;
+    --card-border: 160 30% 85%;
     
     --popover: 0 0% 100%;
     --popover-foreground: 210 11% 13%;
@@ -69,24 +78,32 @@
     /* Custom MARENA tokens */
     --hero-overlay: linear-gradient(135deg, hsla(160, 64%, 10%, 0.85) 0%, hsla(210, 11%, 13%, 0.75) 100%);
     --cta-gradient: linear-gradient(135deg, hsl(160, 64%, 14%) 0%, hsl(160, 64%, 18%) 100%);
-    --card-shadow: 0 4px 20px -4px hsla(210, 11%, 13%, 0.08);
-    --card-shadow-hover: 0 8px 30px -4px hsla(210, 11%, 13%, 0.12);
+    --card-shadow: 0 2px 12px -2px hsla(160, 30%, 20%, 0.06);
+    --card-shadow-hover: 0 12px 28px -8px hsla(160, 30%, 20%, 0.12);
+    --section-separator: linear-gradient(90deg, transparent 0%, hsla(160, 40%, 40%, 0.15) 50%, transparent 100%);
   }
 
   .dark {
     --background: 210 11% 8%;
     --foreground: 0 0% 98%;
     --background-alt: 210 11% 10%;
+    --background-green: 160 30% 8%;
     --text-primary: 0 0% 98%;
     --text-secondary: 210 6% 70%;
     --text-muted: 210 6% 55%;
     --primary: 160 50% 35%;
     --primary-foreground: 0 0% 100%;
     --primary-hover: 160 50% 40%;
+    --primary-light: 160 40% 15%;
+    --footer-bg: 160 55% 6%;
+    --footer-text: 0 0% 100%;
+    --footer-muted: 160 20% 60%;
+    --footer-hover: 160 50% 55%;
     --secondary: 210 11% 15%;
     --secondary-foreground: 0 0% 98%;
     --card: 210 11% 10%;
     --card-foreground: 0 0% 98%;
+    --card-border: 160 30% 25%;
     --popover: 210 11% 10%;
     --popover-foreground: 0 0% 98%;
     --muted: 210 11% 15%;
@@ -160,21 +177,82 @@
     @apply bg-muted;
   }
 
-  /* Card base style */
+  .section-green {
+    background-color: hsl(var(--background-green));
+  }
+
+  /* Section separator */
+  .section-separator {
+    @apply h-px w-full;
+    background: var(--section-separator);
+  }
+
+  /* Section header with accent underline */
+  .section-header {
+    @apply relative inline-block;
+  }
+
+  .section-header::after {
+    content: '';
+    @apply absolute -bottom-2 left-0 w-12 h-0.5 rounded-full;
+    background-color: hsl(var(--primary));
+  }
+
+  .section-header-center::after {
+    @apply left-1/2 -translate-x-1/2;
+  }
+
+  /* Card base style - premium */
   .card-base {
-    @apply bg-card rounded-xl border border-border p-6;
+    @apply bg-card rounded-xl p-6;
+    border: 1px solid hsl(var(--card-border) / 0.5);
     box-shadow: var(--card-shadow);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
   }
 
   .card-base:hover {
     box-shadow: var(--card-shadow-hover);
+    border-color: hsl(var(--card-border));
   }
 
   /* CTA card (Hero) */
   .cta-card {
-    @apply bg-card rounded-2xl border border-border p-6 md:p-8;
-    box-shadow: 0 10px 40px -10px hsla(210, 11%, 13%, 0.15);
+    @apply bg-card rounded-2xl p-6 md:p-8;
+    border: 1px solid hsl(var(--card-border) / 0.5);
+    box-shadow: 0 10px 40px -10px hsla(160, 30%, 20%, 0.15);
+  }
+
+  /* Button interactions */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-primary-foreground font-semibold rounded-xl transition-all duration-200;
+  }
+
+  .btn-primary:hover {
+    @apply scale-[1.02];
+    box-shadow: 0 4px 16px -4px hsl(var(--primary) / 0.4);
+  }
+
+  .btn-primary:active {
+    @apply scale-[0.98];
+  }
+
+  /* Footer styles */
+  .footer-dark {
+    background-color: hsl(var(--footer-bg));
+    color: hsl(var(--footer-text));
+  }
+
+  .footer-dark .footer-muted {
+    color: hsl(var(--footer-muted));
+  }
+
+  .footer-dark .footer-link {
+    color: hsl(var(--footer-muted));
+    transition: color 0.2s ease;
+  }
+
+  .footer-dark .footer-link:hover {
+    color: hsl(var(--footer-hover));
   }
 }
 
