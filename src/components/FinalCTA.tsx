@@ -9,7 +9,7 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}
 
 const FinalCTA = () => {
   return (
-    <section className="bg-primary py-16 md:py-24 relative overflow-hidden">
+    <section id="contato" className="bg-primary py-16 md:py-24 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -24,7 +24,7 @@ const Process = () => {
   ];
 
   return (
-    <section className="section-white section-padding">
+    <section id="processo" className="section-white section-padding">
       <div className="container-custom">
         {/* Header */}
         <ScrollReveal>

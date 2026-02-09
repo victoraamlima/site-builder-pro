@@ -39,7 +39,7 @@ const ValueProposition = () => {
               </h2>
               
               <p className="text-lg text-muted-foreground leading-relaxed mt-6 text-left">
-                A Marena entra para transformar um cenário instável em uma área controlada e encaminhada: solução adequada ao caso, aplicação correta e orientação do que sustenta o resultado ao longo do tempo.
+                A <strong className="font-extrabold">MARENA</strong> entra para transformar um cenário instável em uma área controlada e encaminhada: solução adequada ao caso, aplicação correta e orientação do que sustenta o resultado ao longo do tempo.
               </p>
 
               <div className="pt-4">

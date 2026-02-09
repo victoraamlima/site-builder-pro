@@ -30,7 +30,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="section-white section-padding">
+    <section id="servicos" className="section-white section-padding">
       <div className="container-custom">
         {/* Header */}
         <ScrollReveal>
@@ -54,16 +54,16 @@ const Services = () => {
               <div className="card-base group hover:-translate-y-1 h-full">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/15 transition-colors">
-                    <service.icon className="w-6 h-6 text-primary" />
+                    <service.icon className="w-6 h-6 text-[hsl(130.67deg_100%_27.24%)]" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-card-foreground mb-2 text-left">
+                    <h3 className="text-lg font-bold text-[hsl(130.67deg_100%_27.24%)] mb-2 text-left">
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-3 text-left">
+                    <p className="text-[hsl(130.67deg_100%_27.24%)] text-sm mb-3 text-left">
                       {service.context}
                     </p>
-                    <p className="text-card-foreground text-sm font-medium text-left">
+                    <p className="text-[hsl(130.67deg_100%_27.24%)] text-sm font-medium text-left">
                       {service.result}
                     </p>
                   </div>

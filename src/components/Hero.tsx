@@ -16,24 +16,21 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center pt-[72px]">
+    <section className="relative min-h-screen flex items-center pt-[72px] overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
+        style={{ backgroundImage: `url(/HIDROSSEMEADURA-TALUDE-ASPECTO-002.jpeg)` }}
       />
-      
+
       {/* Overlay */}
-      <div 
-        className="absolute inset-0"
-        style={{ 
-          background: 'linear-gradient(135deg, hsla(160, 64%, 10%, 0.88) 0%, hsla(210, 11%, 13%, 0.78) 100%)' 
-        }}
+      <div
+        className="absolute inset-0 hero-overlay"
       />
 
       {/* Content */}
-      <div className="container-custom relative z-10 py-12 md:py-20">
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+      <div className="container-custom relative z-10 py-16 md:py-24">
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-center">
           {/* Text Content - Left */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -41,7 +38,7 @@ const Hero = () => {
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="lg:col-span-3 space-y-6"
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight text-balance">
+            <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold text-primary-foreground leading-[1.08] text-balance">
               Recuperação ambiental com execução de engenharia em campo, em taludes, beiras de estrada e áreas degradadas.
             </h1>
             
@@ -73,7 +70,7 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="lg:col-span-2"
           >
-            <div className="cta-card">
+            <div className="cta-card max-w-md lg:ml-auto">
               <h3 className="text-xl md:text-2xl font-bold text-card-foreground mb-4">
                 Solicite uma avaliação técnica
               </h3>
@@ -86,7 +83,7 @@ const Hero = () => {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary flex items-center justify-center gap-3 w-full px-6 py-4 text-base"
+                className="btn-primary btn-cta-animated flex items-center justify-center gap-3 w-full px-6 py-4 text-[15px] md:text-base"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

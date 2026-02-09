@@ -25,8 +25,8 @@ const PainPoints = () => {
       <div className="container-custom">
         {/* Header */}
         <ScrollReveal>
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-foreground section-header section-header-center">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <h2 className="text-foreground text-2xl md:text-3xl font-semibold">
               Quando o terreno começa a ceder, a obra perde tempo e o risco sobe.
             </h2>
             <p className="text-lg text-muted-foreground mt-8 text-left">
@@ -36,17 +36,17 @@ const PainPoints = () => {
         </ScrollReveal>
 
         {/* Cards */}
-        <StaggerContainer className="grid md:grid-cols-3 gap-6">
+        <StaggerContainer className="grid md:grid-cols-3 gap-8">
           {painCards.map((card, index) => (
             <StaggerItem key={index}>
-              <div className="card-base group hover:-translate-y-1 h-full">
-                <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-4 group-hover:bg-destructive/15 transition-colors">
-                  <card.icon className="w-6 h-6 text-destructive" />
+              <div className="pain-card h-full">
+                <div className="pain-icon rounded-xl p-2">
+                  <card.icon className="w-8 h-8" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-lg font-bold text-card-foreground mb-2">
+                <h3 className="pain-title">
                   {card.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="pain-desc">
                   {card.description}
                 </p>
               </div>

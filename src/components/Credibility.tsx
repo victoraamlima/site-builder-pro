@@ -36,36 +36,37 @@ const Credibility = () => {
   ];
 
   return (
-    <section className="section-green section-padding">
+    <section id="galeria" className="section-green section-padding">
       <div className="container-custom">
         {/* Header */}
         <ScrollReveal>
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="text-center max-w-3xl mx-auto mb-12 flex flex-col items-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
               <span>Nossa capacidade</span>
             </div>
             <h2 className="text-foreground section-header section-header-center">
               Capacidade real + execução de campo
             </h2>
-            <p className="text-lg text-muted-foreground mt-8 text-left">
-              O que dá confiança não é discurso, mas capacidade, critério técnico e execução bem feita. A Marena estrutura a entrega para o cenário real (campo/obra/área), com responsabilidade e clareza.
+            <p className="text-lg text-muted-foreground mt-8 text-left w-full">
+              O que dá confiança não é discurso, mas capacidade, critério técnico e execução bem feita. A{" "}
+              <strong className="font-extrabold">MARENA</strong> estrutura a entrega para o cenário real (campo/obra/área), com responsabilidade e clareza.
             </p>
           </div>
         </ScrollReveal>
 
         {/* Proof Points */}
-        <StaggerContainer className="grid md:grid-cols-3 gap-6 mb-12 md:mb-16" staggerDelay={0.1}>
+        <StaggerContainer className="grid md:grid-cols-3 gap-6 mb-12 md:mb-16 items-stretch" staggerDelay={0.1}>
           {proofPoints.map((point, index) => (
             <StaggerItem key={index}>
-              <div className="card-base flex items-start gap-4 hover:-translate-y-0.5">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <point.icon className="w-5 h-5 text-primary" />
+              <div className="card-base credibility-card flex items-start gap-4 hover:-translate-y-0.5 h-full">
+                <div className="credibility-icon w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <point.icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-foreground mb-1 text-left">
+                  <h3 className="credibility-title font-bold mb-1 text-left">
                     {point.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm text-left">
+                  <p className="credibility-desc text-sm text-left">
                     {point.description}
                   </p>
                 </div>

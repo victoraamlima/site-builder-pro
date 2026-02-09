@@ -36,7 +36,7 @@ const FAQ = () => {
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <ScrollReveal>
-            <div className="text-center mb-10">
+            <div className="text-center mb-10 flex flex-col items-center">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
                 <span>Perguntas Frequentes</span>
               </div>

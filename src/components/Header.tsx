@@ -8,25 +8,45 @@ const WHATSAPP_MESSAGE = encodeURIComponent(
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
 const Header = () => {
+  const navItems = [
+    { label: "Serviços", href: "#servicos" },
+    { label: "Processo", href: "#processo" },
+    { label: "Galeria", href: "#galeria" },
+    { label: "Contato", href: "#contato" },
+  ];
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 header-bar">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-[72px] lg:h-[90px]">
+        <div className="flex items-center justify-between h-[64px] lg:h-[72px]">
           {/* Logo */}
           <div className="flex items-center">
             <img
               src="/logo_marena_sem_fundo.png"
-              alt="Marena"
-              className="h-10 lg:h-20 w-auto"
+              alt="MARENA"
+              className="h-9 lg:h-12 w-auto"
             />
           </div>
+
+          {/* Navigation */}
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="header-nav-link"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
 
           {/* CTA WhatsApp */}
           <motion.a
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary flex items-center gap-2 px-4 py-2.5 text-sm"
+            className="header-cta flex items-center gap-2 px-4 py-2.5 text-sm"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >

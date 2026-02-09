@@ -63,7 +63,7 @@ const Footer = () => {
           {/* Bottom */}
           <div className="border-t border-white/10 mt-10 pt-8">
             <p className="footer-muted text-sm text-center">
-              © {new Date().getFullYear()} Marena. Todos os direitos reservados.
+              © {new Date().getFullYear()} <strong className="font-extrabold">MARENA</strong>. Todos os direitos reservados.
             </p>
           </div>
         </div>
