@@ -1,7 +1,7 @@
 import { Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
-const WHATSAPP_NUMBER = "5591999999999"; // Substituir pelo número real
+const WHATSAPP_NUMBER = "559491470637";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Olá! Quero avaliar uma área/obra para controle de erosão e recuperação ambiental. Posso enviar fotos e localização?"
 );

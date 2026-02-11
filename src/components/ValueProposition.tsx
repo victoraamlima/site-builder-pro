@@ -2,7 +2,7 @@ import { Shield, Leaf, Target, MessageCircle } from "lucide-react";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
 import { motion } from "framer-motion";
 
-const WHATSAPP_NUMBER = "5591999999999";
+const WHATSAPP_NUMBER = "559491470637";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Olá! Quero avaliar uma área/obra para controle de erosão e recuperação ambiental. Posso enviar fotos e localização?"
 );

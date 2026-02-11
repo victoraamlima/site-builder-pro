@@ -1,6 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 
-const WHATSAPP_NUMBER = "5591999999999";
+const WHATSAPP_NUMBER = "559491470637";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 const Footer = () => {
@@ -38,11 +38,11 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="mailto:contato@marena.com.br"
+                    href="mailto:marena@marenaengenharia.com"
                     className="footer-link flex items-center gap-2 text-sm"
                   >
                     <Mail className="w-4 h-4" />
-                    contato@marena.com.br
+                    marena@marenaengenharia.com
                   </a>
                 </li>
               </ul>
@@ -55,7 +55,7 @@ const Footer = () => {
               </h4>
               <div className="footer-muted flex items-start gap-2 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Belém, PA, Brasil</span>
+                <span>Belém, PA e Brasília, DF</span>
               </div>
             </div>
           </div>

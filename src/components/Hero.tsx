@@ -2,7 +2,7 @@ import { MessageCircle, Check } from "lucide-react";
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
 
-const WHATSAPP_NUMBER = "5591999999999";
+const WHATSAPP_NUMBER = "559491470637";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Olá! Quero avaliar uma área/obra para controle de erosão e recuperação ambiental. Posso enviar fotos e localização?"
 );

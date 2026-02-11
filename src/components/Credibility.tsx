@@ -1,11 +1,6 @@
 import { UsersRound, TruckIcon, BadgeCheck } from "lucide-react";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
+// Use images from the public folder (served at /)
 
 const Credibility = () => {
   const proofPoints = [
@@ -27,12 +22,12 @@ const Credibility = () => {
   ];
 
   const galleryImages = [
-    { src: gallery1, caption: "Aplicação em talude" },
-    { src: gallery2, caption: "Revegetação em andamento" },
-    { src: gallery3, caption: "Área exposta pré-tratamento" },
-    { src: gallery4, caption: "Faixa de domínio recuperada" },
-    { src: gallery5, caption: "Equipe em campo" },
-    { src: gallery6, caption: "Instalação de manta" },
+    { src: "/Gemini_Generated_Image_hlw939hlw939hlw9.png", caption: "Aplicação em talude" },
+    { src: "/Gemini_Generated_Image_lgtvg3lgtvg3lgtv.png", caption: "Revegetação em andamento" },
+    { src: "/Gemini_Generated_Image_v67ayuv67ayuv67a.png", caption: "Área exposta pré-tratamento" },
+    { src: "/Gemini_Generated_Image_vqdpwlvqdpwlvqdp.png", caption: "Faixa de domínio recuperada" },
+    { src: "/ChatGPT Image 10 de fev. de 2026, 22_39_03.png", caption: "Equipe em campo" },
+    { src: "/ChatGPT Image 10 de fev. de 2026, 22_46_46.png", caption: "Instalação de manta" },
   ];
 
   return (
