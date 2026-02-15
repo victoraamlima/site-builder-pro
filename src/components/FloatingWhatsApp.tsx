@@ -28,6 +28,7 @@ const FloatingWhatsApp = () => {
           href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
+          data-cta="floating-whatsapp:abrir"
           initial={{ opacity: 0, scale: 0.7, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.7, y: 30 }}

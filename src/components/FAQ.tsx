@@ -11,22 +11,27 @@ const FAQ = () => {
     {
       question: "Vocês atendem quais regiões?",
       answer: "Atendemos principalmente Belém/PA e região. Se você estiver em outra localidade, envie a localização para avaliarmos viabilidade.",
+      cta: "regioes",
     },
     {
       question: "O orçamento sai na hora?",
       answer: "Depende do cenário. Com fotos, localização e metragem aproximada, já dá para orientar o caminho e estimar próximos passos.",
+      cta: "orcamento",
     },
     {
       question: "Hidrossemeadura serve para qualquer área?",
       answer: "Não. Ela funciona muito bem em cenários específicos. A avaliação técnica define se é o melhor caminho ou se outra solução faz mais sentido.",
+      cta: "hidrossemeadura",
     },
     {
       question: "O que preciso enviar para começar?",
       answer: "Localização, fotos/vídeos, metragem aproximada e o que está acontecendo (erosão, solo exposto, exigência ambiental, etc.).",
+      cta: "requisitos",
     },
     {
       question: "Vocês fazem visita técnica?",
       answer: "Quando necessário. Primeiro fazemos uma triagem pelo WhatsApp com informações básicas para direcionar corretamente.",
+      cta: "visita-tecnica",
     },
   ];
 
@@ -55,7 +60,10 @@ const FAQ = () => {
                   value={`item-${index}`}
                   className="bg-card border border-primary/8 rounded-xl px-6 data-[state=open]:shadow-md data-[state=open]:border-primary/15 transition-all duration-200"
                 >
-                  <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-5 justify-start">
+                  <AccordionTrigger
+                    data-cta={`faq:abrir-${faq.cta}`}
+                    className="text-left font-semibold text-foreground hover:no-underline py-5 justify-start"
+                  >
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground pb-5 text-left">

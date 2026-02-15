@@ -51,6 +51,7 @@ const ValueProposition = () => {
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-cta="value-proposition:whatsapp"
                   className="btn-primary inline-flex items-center gap-3 px-6 py-3.5"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
