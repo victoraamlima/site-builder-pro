@@ -29,6 +29,7 @@ const FinalCTA = () => {
           href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
+          data-cta="final-cta:whatsapp-avaliacao"
           className="inline-flex items-center gap-3 bg-primary-foreground text-primary px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200"
           whileHover={{ scale: 1.02, boxShadow: "0 8px 24px -8px rgba(0,0,0,0.3)" }}
           whileTap={{ scale: 0.98 }}

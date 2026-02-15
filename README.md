@@ -60,6 +60,25 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Microsoft Clarity
+
+Este projeto já inclui o Microsoft Clarity via snippet no `index.html`.
+
+- Project ID: `vhr1cmucgf`
+- Consentimento: `consentv2` com `granted`.
+- Unmask: aplicado no `<body>` via `data-clarity-unmask="true"`.
+
+### Convenção de CTAs
+
+Todos os elementos interativos devem ter `data-cta` no padrão:
+
+- `<secao>:<funcao>`
+- Ex.: `hero:whatsapp-avaliacao`, `footer:email`, `header:navegar-servicos`
+
+Os cliques são capturados pelo `ClickTracker` e enviados como eventos:
+
+- `click:<pathname>:cta:<secao>:<funcao>`
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.

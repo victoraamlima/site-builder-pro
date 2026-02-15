@@ -39,7 +39,7 @@ const Hero = () => {
             className="lg:col-span-3 space-y-6"
           >
             <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold text-primary-foreground leading-[1.08] text-balance">
-              Recuperação ambiental com execução de engenharia em campo, em taludes, beiras de estrada e áreas degradadas.
+              Recuperação ambiental com execução de engenharia em campo, em taludes, margem de rodovias e áreas degradadas.
             </h1>
             
             <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl leading-relaxed">
@@ -83,6 +83,7 @@ const Hero = () => {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-cta="hero:whatsapp-avaliacao"
                 className="btn-primary btn-cta-animated flex items-center justify-center gap-3 w-full px-6 py-4 text-[15px] md:text-base"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

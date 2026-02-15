@@ -30,6 +30,7 @@ const Footer = () => {
                     href={WHATSAPP_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-cta="footer:whatsapp"
                     className="footer-link flex items-center gap-2 text-sm"
                   >
                     <Phone className="w-4 h-4" />
@@ -39,6 +40,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="mailto:marena@marenaengenharia.com"
+                    data-cta="footer:email"
                     className="footer-link flex items-center gap-2 text-sm"
                   >
                     <Mail className="w-4 h-4" />
@@ -53,9 +55,22 @@ const Footer = () => {
               <h4 className="text-footer-text font-semibold mb-4">
                 Localização
               </h4>
-              <div className="footer-muted flex items-start gap-2 text-sm">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Belém, PA e Brasília, DF</span>
+              <div className="space-y-3 text-sm">
+                <div className="footer-muted flex items-start gap-2">
+                  <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <div className="font-medium">Brasília — MATRIZ</div>
+                    <div>Setor Saus Quadra 04 Bloco a Edifício Victoria Office Tower — Sala 421 Parte Bc, Asa Sul</div>
+                  </div>
+                </div>
+
+                <div className="footer-muted flex items-start gap-2">
+                  <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <div className="font-medium">Belém — FILIAL</div>
+                    <div>Sem endereço cadastrado</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -9,10 +9,10 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}
 
 const Header = () => {
   const navItems = [
-    { label: "Serviços", href: "#servicos" },
-    { label: "Processo", href: "#processo" },
-    { label: "Galeria", href: "#galeria" },
-    { label: "Contato", href: "#contato" },
+    { label: "Serviços", href: "#servicos", cta: "servicos" },
+    { label: "Processo", href: "#processo", cta: "processo" },
+    { label: "Galeria", href: "#galeria", cta: "galeria" },
+    { label: "Contato", href: "#contato", cta: "contato" },
   ];
 
   return (
@@ -34,6 +34,7 @@ const Header = () => {
               <a
                 key={item.href}
                 href={item.href}
+                data-cta={`header:navegar-${item.cta}`}
                 className="header-nav-link"
               >
                 {item.label}
@@ -46,6 +47,7 @@ const Header = () => {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
+            data-cta="header:whatsapp"
             className="header-cta flex items-center gap-2 px-4 py-2.5 text-sm"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
