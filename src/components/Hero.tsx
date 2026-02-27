@@ -38,12 +38,16 @@ const Hero = () => {
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="lg:col-span-3 space-y-6"
           >
+            {/* Tagline / Slogan */}
+            <p className="text-sm md:text-base font-semibold uppercase tracking-wider text-primary-foreground/95 max-w-2xl mb-3">
+              RESGATANDO A FORÇA DA TERRA, PARA UM AMANHÃ SUSTENTÁVEL
+            </p>
             <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold text-primary-foreground leading-[1.08] text-balance">
               Recuperação ambiental com execução de engenharia em campo, em taludes, margem de rodovias e áreas degradadas.
             </h1>
             
             <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl leading-relaxed">
-              Hidrossemeadura e soluções de revegetação para <strong>conter erosão</strong>, <strong>atender exigências ambientais</strong> e <strong>deixar a área pronta para seguir</strong>, com avaliação técnica e execução no cenário real.
+              <strong>Hidrossemeadura, soluções de revegetação e OAC — Obras de Arte Corrente e Drenagem Superficial</strong>, para <strong>conter erosão</strong>, <strong>atender exigências ambientais</strong> e <strong>deixar a área pronta para seguir</strong>, com avaliação técnica e execução no cenário real.
             </p>
 
             {/* Benefits - Desktop */}
