@@ -1,4 +1,5 @@
 import { Shield, Leaf, Target, MessageCircle } from "lucide-react";
+import { approvedMedia } from "@/lib/approvedMedia";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
 import { motion } from "framer-motion";
 
@@ -64,25 +65,44 @@ const ValueProposition = () => {
           </ScrollReveal>
 
           {/* Value Cards */}
-          <StaggerContainer className="space-y-4" staggerDelay={0.1}>
-            {valueCards.map((card, index) => (
-              <StaggerItem key={index}>
-                <div className="card-base flex items-start gap-4 hover:-translate-y-0.5">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <card.icon className="w-6 h-6 text-primary" />
+          <div className="space-y-5">
+            <ScrollReveal delay={0.1}>
+              <figure className="overflow-hidden rounded-2xl border border-primary/10 bg-card shadow-sm">
+                <img
+                  src={approvedMedia.value.src}
+                  alt={approvedMedia.value.alt}
+                  width={approvedMedia.value.width}
+                  height={approvedMedia.value.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+                <figcaption className="px-5 py-4 text-sm font-medium text-muted-foreground">
+                  {approvedMedia.value.caption}
+                </figcaption>
+              </figure>
+            </ScrollReveal>
+
+            <StaggerContainer className="space-y-4" staggerDelay={0.1}>
+              {valueCards.map((card, index) => (
+                <StaggerItem key={index}>
+                  <div className="card-base flex items-start gap-4 hover:-translate-y-0.5">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <card.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-card-foreground mb-1 text-left">
+                        {card.title}
+                      </h3>
+                      <p className="text-muted-foreground text-left">
+                        {card.description}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-card-foreground mb-1 text-left">
-                      {card.title}
-                    </h3>
-                    <p className="text-muted-foreground text-left">
-                      {card.description}
-                    </p>
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
         </div>
       </div>
 
