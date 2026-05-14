@@ -24,7 +24,7 @@ const Credibility = () => {
 
   const galleryItems: ApprovedMediaItem[] = [
     approvedMedia.galleryVideo,
-    ...approvedMedia.gallery,
+    ...approvedMedia.gallery.filter((item) => !item.src.endsWith("marena-04.webp")),
   ];
 
   return (
@@ -72,7 +72,7 @@ const Credibility = () => {
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" staggerDelay={0.08}>
             {galleryItems.map((item, index) => (
               <StaggerItem key={index}>
-                <figure className={`group relative overflow-hidden rounded-xl border border-primary/8 bg-card shadow-sm transition-all duration-300 hover:shadow-md ${item.kind === "video" ? "aspect-[474/850] sm:row-span-2" : "aspect-[4/3]"}`}>
+                <figure className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-primary/8 bg-card shadow-sm transition-all duration-300 hover:shadow-md">
                   {item.kind === "video" ? (
                     <video
                       src={item.src}
