@@ -1,6 +1,6 @@
 import { MessageCircle, Check } from "lucide-react";
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
+import { approvedMedia } from "@/lib/approvedMedia";
 
 const WHATSAPP_NUMBER = "559491470637";
 const WHATSAPP_MESSAGE = encodeURIComponent(
@@ -20,7 +20,8 @@ const Hero = () => {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(/HIDROSSEMEADURA-TALUDE-ASPECTO-002.jpeg)` }}
+        style={{ backgroundImage: `url(${approvedMedia.hero.src})` }}
+        aria-hidden="true"
       />
 
       {/* Overlay */}

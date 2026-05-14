@@ -1,6 +1,7 @@
 import { UsersRound, TruckIcon, BadgeCheck } from "lucide-react";
+import type { ApprovedMediaItem } from "@/lib/approvedMedia";
+import { approvedMedia } from "@/lib/approvedMedia";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
-// Use images from the public folder (served at /)
 
 const Credibility = () => {
   const proofPoints = [
@@ -21,13 +22,9 @@ const Credibility = () => {
     },
   ];
 
-  const galleryImages = [
-    { src: "/Gemini_Generated_Image_hlw939hlw939hlw9.png", caption: "Aplicação em talude" },
-    { src: "/Gemini_Generated_Image_lgtvg3lgtvg3lgtv.png", caption: "Revegetação em andamento" },
-    { src: "/Gemini_Generated_Image_v67ayuv67ayuv67a.png", caption: "Área exposta pré-tratamento" },
-    { src: "/Gemini_Generated_Image_vqdpwlvqdpwlvqdp.png", caption: "Faixa de domínio recuperada" },
-    { src: "/ChatGPT Image 10 de fev. de 2026, 22_39_03.png", caption: "Equipe em campo" },
-    { src: "/ChatGPT Image 10 de fev. de 2026, 22_46_46.png", caption: "Instalação de manta" },
+  const galleryItems: ApprovedMediaItem[] = [
+    approvedMedia.galleryVideo,
+    ...approvedMedia.gallery.filter((item) => !item.src.endsWith("marena-04.webp")),
   ];
 
   return (
@@ -72,20 +69,40 @@ const Credibility = () => {
 
         {/* Gallery */}
         <ScrollReveal delay={0.2}>
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-4" staggerDelay={0.08}>
-            {galleryImages.map((image, index) => (
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" staggerDelay={0.08}>
+            {galleryItems.map((item, index) => (
               <StaggerItem key={index}>
-                <div className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-primary/8 shadow-sm hover:shadow-md transition-all duration-300">
-                  <img
-                    src={image.src}
-                    alt={image.caption}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <p className="absolute bottom-3 left-3 right-3 text-primary-foreground text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {image.caption}
-                  </p>
-                </div>
+                <figure className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-primary/8 bg-card shadow-sm transition-all duration-300 hover:shadow-md">
+                  {item.kind === "video" ? (
+                    <video
+                      src={item.src}
+                      poster={item.posterSrc}
+                      width={item.width}
+                      height={item.height}
+                      preload="none"
+                      muted
+                      playsInline
+                      controls
+                      className="h-full w-full object-cover"
+                      aria-label={item.alt}
+                      data-cta="gallery:video-execucao"
+                    />
+                  ) : (
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      width={item.width}
+                      height={item.height}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/65 via-transparent to-transparent opacity-100 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100" />
+                  <figcaption className="pointer-events-none absolute bottom-3 left-3 right-3 text-primary-foreground text-sm font-medium opacity-100 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100">
+                    {item.caption}
+                  </figcaption>
+                </figure>
               </StaggerItem>
             ))}
           </StaggerContainer>

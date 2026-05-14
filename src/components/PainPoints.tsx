@@ -1,4 +1,5 @@
 import { OctagonAlert, FileX, Timer } from "lucide-react";
+import { approvedMedia } from "@/lib/approvedMedia";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
 
 const PainPoints = () => {
@@ -33,6 +34,35 @@ const PainPoints = () => {
               Erosão, assoreamento, áreas expostas e taludes instáveis geram retrabalho, pressão de prazo e insegurança. O ponto não é "ter algo bonito": é <strong className="text-foreground">resolver no campo</strong>.
             </p>
           </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.1}>
+          <figure className="mb-10 overflow-hidden rounded-2xl border border-primary/10 bg-card shadow-sm md:mb-12">
+            <div className="grid md:grid-cols-[minmax(0,1fr)_minmax(280px,0.42fr)]">
+              <div className="relative min-h-[260px] md:min-h-[360px]">
+                <img
+                  src={approvedMedia.pain.src}
+                  alt={approvedMedia.pain.alt}
+                  width={approvedMedia.pain.width}
+                  height={approvedMedia.pain.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover object-center"
+                />
+              </div>
+              <figcaption className="flex flex-col justify-center gap-3 p-6 md:p-8">
+                <span className="text-sm font-semibold uppercase tracking-wide text-primary">
+                  Problema real no campo
+                </span>
+                <p className="text-xl font-semibold leading-tight text-foreground">
+                  A erosão não espera o cronograma da obra.
+                </p>
+                <p className="text-muted-foreground">
+                  {approvedMedia.pain.caption}
+                </p>
+              </figcaption>
+            </div>
+          </figure>
         </ScrollReveal>
 
         {/* Cards */}

@@ -68,7 +68,6 @@ const Footer = () => {
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="font-medium">Belém — FILIAL</div>
-                    <div>Sem endereço cadastrado</div>
                   </div>
                 </div>
               </div>
